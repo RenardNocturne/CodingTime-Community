@@ -1,0 +1,129 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Inconsolata:wght@500&display=swap');
+//Exo 2 & Inconsolata
+
+@font-face {
+    font-family: "League Gothic";
+    src: url("../fonts/LeagueGothic-1.601/static/WOFF/LeagueGothic-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Whitney";
+    src: url("../fonts/whitney-2-cufonfonts/whitneybook.otf") format("otf");
+}
+
+//variables
+$color-primary: #636EE6;
+$color-primary-dark: #0E0F13;
+$color-primary-light: #14151B;
+
+$color-primary-text: #BFC1C4;
+$color-primary-text-dark: #94979C;
+$color-primary-text-light: #E3DEDE;
+
+//create mixin for headers
+@mixin header {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    color: $color-primary-text;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    width: 100%;
+    height: 75px;
+    background-color: $color-primary-dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+        #title {
+            margin: 0;
+            @include header;
+        }
+    }
+
+    &__info {
+        width: fit-content;
+        padding-right: 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            font-family: "Whitney", Arial, Helvetica, sans-serif;
+            color: $color-primary-text;
+            font-size: large;
+        }
+
+        img {
+            margin-left: 7px;
+            border-radius: 50%;
+            height: auto;
+            width: 50px;
+        }
+    }
+
+    &__login {
+        height: 100%;
+        padding-right: 20px;
+        display: flex;
+        width: 112.5px;
+        align-items: center;
+        justify-content: center;
+
+        &__box {
+            width: 100%;
+            height: 50%;
+            border-radius: 5px;
+            background-color: $color-primary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 50%;
+                left: 50%;
+                top: var(--mouse-y);
+                left: var(--mouse-x);
+                transform-style: flat;
+                transform: translate3d(-50%,-50%,0);
+                background: rgba($color-primary-text-light,.1);
+                border-radius: 100%;
+                transition: width .3s ease, height .3s ease;
+            }
+
+            &:active {
+                &:after {
+                  width: 300px;
+                  height: 300px;
+                }
+              }
+
+            #login {
+                text-align: center;
+                align-self: center;
+                text-decoration: none;
+                font-family: "Whitney", Arial, Helvetica, sans-serif;
+                color: $color-primary-text;
+                font-size: large;
+            }
+        }
+    }
+}

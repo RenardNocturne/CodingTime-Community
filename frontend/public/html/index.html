@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/top.css">
+        <link rel="stylesheet" href="../css/menu.css">
+        <link rel="icon" sizes="32x32" href="../img/logoCodingTime.jpg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="../img/logoCodingTime.png" type="image/x-icon">
+        <title>CTC - Accueil</title>
+    </head>
+    <body>
+        <div class="top" >
+            <div class="top__menu">
+                <input id="menu__toggle" type="checkbox" onclick="clicked()"/>
+                <label class="menu__btn" for="menu__toggle">
+                <span></span>
+                </label>   
+                <ul class="menu__box">
+                    <li><a class="menu__item" href="#">About</a></li>
+                    <li><a class="menu__item" href="./request.html">Request</a></li>
+                    <li><a class="menu__item" href="">Discord</a></li>
+                </ul>
+            </div>
+            <div class="top__title">
+                <h1 id="title">CodingTime Community</h1>
+            </div>
+            <div class="top__info" id="userAccountBox">
+                <p id="userAccount">
+
+                </p>
+                <img src="" alt="Votre avatar" id="userAccountImg">
+            </div>
+            <div class="top__login" id = "loginContainer">
+                <div class="top__login__box" id="loginBox" onclick="location.href = 'https:\/\/discord.com/api/oauth2/authorize?client_id=972844456363565096&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Ffrontend%2Fpublic%2Fhtml%2F&response_type=token&scope=identify'">
+                    <a href="https://discord.com/api/oauth2/authorize?client_id=972844456363565096&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Ffrontend%2Fpublic%2Fhtml%2F&response_type=token&scope=identify" id="login">Connexion</a>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <!-- <div class="about" id="about">
+                <div class="about__content content">
+                    <h2>
+                        A propos de CTC:
+                    </h2>
+                    <p>
+                        CTC pour Coding Time Community
+                    </p>
+                </div>
+            </div> -->
+        </div> 
+        <script src="../js/script.js"></script>
+    </body>
+</html>

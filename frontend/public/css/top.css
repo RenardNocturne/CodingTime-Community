@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Inconsolata:wght@500&display=swap");
+@font-face {
+  font-family: "League Gothic";
+  src: url("../fonts/LeagueGothic-1.601/static/WOFF/LeagueGothic-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/whitney-2-cufonfonts/whitneybook.otf") format("otf");
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.top {
+  width: 100%;
+  height: 75px;
+  background-color: #0E0F13;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top__title #title {
+  margin: 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  color: #BFC1C4;
+}
+.top__info {
+  width: fit-content;
+  padding-right: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top__info p {
+  font-family: "Whitney", Arial, Helvetica, sans-serif;
+  color: #BFC1C4;
+  font-size: large;
+}
+.top__info img {
+  margin-left: 7px;
+  border-radius: 50%;
+  height: auto;
+  width: 50px;
+}
+.top__login {
+  height: 100%;
+  padding-right: 20px;
+  display: flex;
+  width: 112.5px;
+  align-items: center;
+  justify-content: center;
+}
+.top__login__box {
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+  background-color: #636EE6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.top__login__box:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  top: var(--mouse-y);
+  left: var(--mouse-x);
+  transform-style: flat;
+  transform: translate3d(-50%, -50%, 0);
+  background: rgba(227, 222, 222, 0.1);
+  border-radius: 100%;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+.top__login__box:active:after {
+  width: 300px;
+  height: 300px;
+}
+.top__login__box #login {
+  text-align: center;
+  align-self: center;
+  text-decoration: none;
+  font-family: "Whitney", Arial, Helvetica, sans-serif;
+  color: #BFC1C4;
+  font-size: large;
+}
+
+/*# sourceMappingURL=top.css.map */
