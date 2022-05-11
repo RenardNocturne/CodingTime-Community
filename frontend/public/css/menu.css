@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Inconsolata:wght@500&family=Outfit:wght@300&display=swap');
+
 #menu__toggle {
 opacity: 0;
 }
@@ -55,12 +57,13 @@ list-style: none;
 background-color: #2c2e4a;
 box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
 transition-duration: .25s;
+text-align: center;
 }
 .menu__item {
 display: block;
 padding: 12px 24px;
 color: #e7e3e3;
-font-family: 'Roboto', sans-serif;
+font-family: 'Outfit', sans-serif;
 font-size: 20px;
 font-weight: 600;
 text-decoration: none;

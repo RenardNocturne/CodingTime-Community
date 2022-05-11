@@ -1,6 +1,6 @@
 //Fonts
-@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Inconsolata:wght@500&display=swap');
-//Exo 2 & Inconsolata
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Inconsolata:wght@500&family=Outfit:wght@300&display=swap');
+//Exo 2 & Inconsolata & Outfit
 
 @font-face {
     font-family: "League Gothic";
@@ -9,13 +9,21 @@
 
 @font-face {
     font-family: "Whitney";
-    src: url("../fonts/whitney-2-cufonfonts/whitneybook.otf") format("otf");
+    src: url("../fonts/whitney-2-cufonfonts/whitneybook.otf");
 }
 
 //variables
-$color-primary: #636EE6;
-$color-primary-dark: #0E0F13;
-$color-primary-light: #14151B;
+$color-primary: #5865F2;
+$color-primary-hover: #4752C4;
+$color-primary-dark: #3C45A5;
+
+$color-danger: #CC484A;
+$color-danger-hover: #983637;
+$color-danger-dark: #842F30;
+
+$color-primary-light: #0D1117;
+$backgroundColor-primary: #14151B;
+$backgroundColor-primary-dark: #0E0F13;
 
 $color-primary-text: #BFC1C4;
 $color-primary-text-dark: #94979C;
@@ -26,23 +34,102 @@ $color-primary-text-light: #E3DEDE;
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-family: "Outfit", Arial, Helvetica, sans-serif;
     color: $color-primary-text;
 }
 
+@mixin buttonBox ($color, $colorHover, $colorClick) {
+    width: 100%;
+    height: 50%;
+    border-radius: 5px;
+    border: $color 1.5px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: $colorHover;
+        border-color: $colorHover;
+    }
+
+    &:active {
+        background-color: $colorClick;
+        border-color: $colorClick;
+    }
+}
+
+@for $n from 0 to 4 {
+    @keyframes bubbleUp#{$n} {
+        0% {
+            bottom: -25%;
+            left: random(100) + px;
+            opacity: 1;
+        }
+        15% {
+            left: random(100) + px;
+        }
+        30% {
+            left: random(100) + px;
+        }
+    
+        45% {
+            left: random(100) + px;
+        }
+    
+        60% {
+            left: random(100) + px;
+        }
+    
+        75% {
+            left: random(100) + px;
+        }
+        
+        100% {
+            opacity: 0;
+            top: -25%
+        }
+    }
+}
+
+
 
 body {
+    background-color: $backgroundColor-primary;
+    // height: 1000px;
     margin: 0;
-    padding: 0;
+    padding-top: 75px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.nav {
+    z-index: 3;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    // height: 75px;
 }
 
 .top {
     width: 100%;
     height: 75px;
-    background-color: $color-primary-dark;
+    background-color: $backgroundColor-primary-dark;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &__menu {
+        padding-left: 15px;
+    }
 
     &__title {
         #title {
@@ -71,6 +158,30 @@ body {
             height: auto;
             width: 50px;
         }
+
+        .logoutButton {
+            @include buttonBox($color-danger, $color-danger-hover, $color-danger-dark);
+            margin-right: 15px;
+            visibility: hidden;
+            opacity: 0;
+            width: 125px;
+
+            a {
+                text-align: center;
+                align-self: center;
+                text-decoration: none;
+                font-family: "Outfit", Arial, Helvetica, sans-serif;
+                color: $color-primary-text;
+                font-size: large;
+            }
+        }
+
+        &:hover {
+            .logoutButton {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
     }
 
     &__login {
@@ -82,48 +193,153 @@ body {
         justify-content: center;
 
         &__box {
-            width: 100%;
-            height: 50%;
-            border-radius: 5px;
-            background-color: $color-primary;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-
-            &:after {
-                content: "";
-                position: absolute;
-                width: 0;
-                height: 0;
-                top: 50%;
-                left: 50%;
-                top: var(--mouse-y);
-                left: var(--mouse-x);
-                transform-style: flat;
-                transform: translate3d(-50%,-50%,0);
-                background: rgba($color-primary-text-light,.1);
-                border-radius: 100%;
-                transition: width .3s ease, height .3s ease;
-            }
-
-            &:active {
-                &:after {
-                  width: 300px;
-                  height: 300px;
-                }
-              }
+            @include buttonBox($color-primary, $color-primary-hover, $color-primary-dark);
 
             #login {
                 text-align: center;
                 align-self: center;
                 text-decoration: none;
-                font-family: "Whitney", Arial, Helvetica, sans-serif;
+                font-family: "Outfit", Arial, Helvetica, sans-serif;
                 color: $color-primary-text;
                 font-size: large;
             }
+        }
+    }
+}
+
+.progressbar {
+    align-self: start;
+    height: 7px;
+    width: 0;
+    background-color: $color-primary;
+    transition: width 0.3s ease;
+}
+
+.middle {
+    // margin-top: 75px;
+    width: 100%;
+    height: calc(100% - 75px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .about {
+        background-image: radial-gradient(circle at top center, $backgroundColor-primary, $backgroundColor-primary-dark);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 50vh;
+        width: 80%;
+        padding: 0 10% 0 10%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        &__title {
+            width: fit-content;
+
+            h1 {
+                text-align: center;
+                line-height: 60px;
+                margin: 0;
+                @include header;
+
+                strong {
+                    color: $color-primary
+                }
+            }
+        }        
+        &__logo {
+
+
+            img {
+                transform: rotate(180deg);
+                width: 100%;
+            }
+        }
+        
+    }
+
+    .devs {
+        box-shadow: 0 -25px 75px -10px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        position: relative;
+        height: 80vh;
+        width: 80%;
+        padding: 0 10% 0 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &::after {
+            content: "";
+            z-index: -2;
+            position: absolute;
+            mask:  url("../img/wave.svg");
+            -webkit-mask: url("../img/wave.svg");
+            top: 0;
+            left: 0;
+            background-color: $backgroundColor-primary-dark;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__title {
+            h1 {
+                @include header();
+
+                strong {
+                    color: $color-primary;
+                }
+            }
+        }
+
+        &__avatars {
+            position: relative;
+            width: 75%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+
+            &__avatar {
+                position: relative;
+                height: 80vh;
+                width: 12.5%;
+                
+                img {
+                    position: absolute;
+                    width: 100%;
+                    top: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 75%;
+                    transition: all 1s ease;
+                }
+            }
+        }
+    }
+}
+footer {
+    .foot{
+        color: $color-primary-hover;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    &-track {
+        box-shadow: inset 0 0 5px $color-primary-light; 
+        border-radius: 10px;
+    }
+
+    &-thumb {
+        background: $color-primary; 
+        border-radius: 10px;
+        
+        &:hover {
+            background: $color-primary-hover; 
         }
     }
 }

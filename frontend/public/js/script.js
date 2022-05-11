@@ -1,5 +1,9 @@
 console.log("Script loaded !");
 
+function randomNumberBetweenInts (min, max) {
+    return Math.random() * (max - min + 1) + min;
+}
+
 window.onload = () => {
     const fragment = new URLSearchParams(window.location.hash.slice(1));
     const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
@@ -19,7 +23,7 @@ window.onload = () => {
     .then(result => result.json())
     .then(response => {
         const { username, discriminator, id, avatar } = response;
-        document.getElementById('userAccount').innerText += ` ${username}#${discriminator}`;
+        document.getElementById('title').style.transform = "translateX(125px)"; 
         document.getElementById("userAccountImg").setAttribute("src", `https://cdn.discordapp.com/avatars/${id}/${avatar}.png`)       
     })
     .catch(console.error);
@@ -33,3 +37,11 @@ button.addEventListener('mousemove', (e) => {
     button.style.setProperty('--mouse-x', x + "px");
     button.style.setProperty('--mouse-y', y + "px");
 });
+
+const progress = document.getElementById('progressBar');
+let totalHeight = document.body.scrollHeight - window.innerHeight;
+
+window.onscroll = function(){
+    let progressWidth = (window.pageYOffset / totalHeight) * 100;
+    progress.style.width = progressWidth + '%';
+}

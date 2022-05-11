@@ -3,53 +3,90 @@
     <head>
         <link rel="stylesheet" href="../css/top.css">
         <link rel="stylesheet" href="../css/menu.css">
-        <link rel="icon" sizes="32x32" href="../img/logoCodingTime.jpg">
+        <link rel="icon" sizes="32x32" href="../img/logoCodingTime-transparent.png>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="../img/logoCodingTime.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../img/logoCodingTime-transparent.png" type="image/x-icon">
         <title>CTC - Accueil</title>
     </head>
     <body>
-        <div class="top" >
-            <div class="top__menu">
-                <input id="menu__toggle" type="checkbox" onclick="clicked()"/>
-                <label class="menu__btn" for="menu__toggle">
-                <span></span>
-                </label>   
-                <ul class="menu__box">
-                    <li><a class="menu__item" href="#">About</a></li>
-                    <li><a class="menu__item" href="./request.html">Request</a></li>
-                    <li><a class="menu__item" href="">Discord</a></li>
-                </ul>
-            </div>
-            <div class="top__title">
-                <h1 id="title">CodingTime Community</h1>
-            </div>
-            <div class="top__info" id="userAccountBox">
-                <p id="userAccount">
-
-                </p>
-                <img src="" alt="Votre avatar" id="userAccountImg">
-            </div>
-            <div class="top__login" id = "loginContainer">
-                <div class="top__login__box" id="loginBox" onclick="location.href = 'https:\/\/discord.com/api/oauth2/authorize?client_id=972844456363565096&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Ffrontend%2Fpublic%2Fhtml%2F&response_type=token&scope=identify'">
-                    <a href="https://discord.com/api/oauth2/authorize?client_id=972844456363565096&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Ffrontend%2Fpublic%2Fhtml%2F&response_type=token&scope=identify" id="login">Connexion</a>
+        <div class="main">
+            <div class="nav">
+                <div class="top" >
+                    <div class="top__menu">
+                        <input id="menu__toggle" type="checkbox" onclick="clicked()"/>
+                        <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                        </label>   
+                        <ul class="menu__box">
+                            <li><a class="menu__item" href="#">About</a></li>
+                            <li><a class="menu__item" href="./request.html">Requête</a></li>
+                            <li><a class="menu__item" href="#">Tutoriel</a></li>
+                            <li><a class="menu__item" href="#">Nos soutiens </a></li>
+                            <li><a class="menu__item" href="#">Discord</a></li>
+                        </ul>
+                    </div>
+                    <div class="top__title">
+                        <h1 id="title">CodingTime Community</h1>
+                    </div>
+                    <div class="top__info" id="userAccountBox">
+                        <div class="logoutButton" onclick="location.href = 'http:\/\/127.0.0.1:5500/frontend/public/html/'">
+                            <a href="http://127.0.0.1:5500/frontend/public/html/">Déconnexion</a>
+                        </div>
+                        <p id="userAccount">
+    
+                        </p>
+                        <img src="" alt="Votre avatar" id="userAccountImg">
+                    </div>
+                    <div class="top__login" id = "loginContainer">
+                        <div class="top__login__box" id="loginBox" onclick="location.href = 'https:\/\/discord.com/api/oauth2/authorize?client_id=972844456363565096&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Ffrontend%2Fpublic%2Fhtml%2F&response_type=token&scope=identify'">
+                            <a href="https://discord.com/api/oauth2/authorize?client_id=972844456363565096&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Ffrontend%2Fpublic%2Fhtml%2F&response_type=token&scope=identify" id="login">Connexion</a>
+                        </div>
+                    </div>
                 </div>
+                <div class="progressbar" id="progressBar"></div>
             </div>
-        </div>
-        <div class="middle">
-            <!-- <div class="about" id="about">
-                <div class="about__content content">
-                    <h2>
-                        A propos de CTC:
-                    </h2>
-                    <p>
-                        CTC pour Coding Time Community
-                    </p>
+            <div class="middle">
+                <div class="about">
+                    <div class="about__title">
+                        <h1>
+                            Le forum pour <strong>développeurs</strong> & <br> <strong>apprentis développeurs</strong> !
+                        </h1>
+                    </div>
+                    <div class="about__logo">
+                        <img src="../img/logoCodingTime-transparent.png" alt="Logo">
+                    </div>
                 </div>
-            </div> -->
-        </div> 
+                <div class="devs">
+                    <div class="devs__title">
+                        <h1 id="devs"><strong>Beaucoup</strong> développeurs & graphistes en ligne !</h1>
+                    </div>
+                    <div class="devs__avatars">
+                        <div class="devs__avatars__avatar">
+                            <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar0" style="animation: bubbleUp0 10s ease"><br>
+                        </div>
+                        <div class="devs__avatars__avatar">
+                            <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar1" style="animation: bubbleUp1 10s ease"><br>
+                        </div>
+                        <div class="devs__avatars__avatar">
+                            <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar2" style="animation: bubbleUp2 10s ease"><br>
+                        </div>
+                        <div class="devs__avatars__avatar">
+                            <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar3" style="animation: bubbleUp3 10s ease">
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div class="main">
         <script src="../js/script.js"></script>
+        <script src="../js/avatars.js"></script>
     </body>
+
+    <footer>
+        <p class="foot">
+            Dev by @RenardNocturne & @Nàt
+        </p>
+    </footer>
+
 </html>
