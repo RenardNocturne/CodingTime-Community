@@ -13,7 +13,6 @@ fetch("https://canary.discord.com/api/guilds/825760704241991752/widget.json")
         
     for (i in avatars) {
         avatars[i].setAttribute("src", pickRandomAvatar());
-        avatars[i].style.animationDelay = randomNumberBetweenInts(0, 10) + "s";
     }
 })
 

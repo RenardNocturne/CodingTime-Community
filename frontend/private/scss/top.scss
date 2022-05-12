@@ -307,6 +307,7 @@ body {
                 height: 80vh;
                 width: 12.5%;
                 
+                
                 img {
                     position: absolute;
                     width: 100%;
@@ -320,9 +321,27 @@ body {
         }
     }
 }
-footer {
-    .foot{
-        color: $color-primary-hover;
+
+.footer {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .credits{
+        color: $color-primary-text;
+        margin: 0;
+        position: relative;
+        text-align: center;
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+        vertical-align: middle;
+        font-size: medium;
+
+        a {
+            text-decoration: none;
+            color: $color-primary-hover;
+        }
+
     }
 }
 

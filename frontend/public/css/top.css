@@ -10,23 +10,23 @@
 @keyframes bubbleUp0 {
   0% {
     bottom: -25%;
-    left: 13px;
+    left: 6px;
     opacity: 1;
   }
   15% {
-    left: 44px;
+    left: 11px;
   }
   30% {
-    left: 31px;
+    left: 41px;
   }
   45% {
-    left: 8px;
+    left: 91px;
   }
   60% {
-    left: 35px;
+    left: 24px;
   }
   75% {
-    left: 32px;
+    left: 70px;
   }
   100% {
     opacity: 0;
@@ -36,23 +36,23 @@
 @keyframes bubbleUp1 {
   0% {
     bottom: -25%;
-    left: 27px;
+    left: 34px;
     opacity: 1;
   }
   15% {
-    left: 70px;
+    left: 28px;
   }
   30% {
-    left: 23px;
+    left: 44px;
   }
   45% {
-    left: 2px;
+    left: 26px;
   }
   60% {
-    left: 70px;
+    left: 62px;
   }
   75% {
-    left: 97px;
+    left: 24px;
   }
   100% {
     opacity: 0;
@@ -62,23 +62,23 @@
 @keyframes bubbleUp2 {
   0% {
     bottom: -25%;
-    left: 11px;
+    left: 52px;
     opacity: 1;
   }
   15% {
-    left: 24px;
+    left: 59px;
   }
   30% {
-    left: 48px;
+    left: 23px;
   }
   45% {
-    left: 14px;
+    left: 28px;
   }
   60% {
-    left: 76px;
+    left: 41px;
   }
   75% {
-    left: 77px;
+    left: 66px;
   }
   100% {
     opacity: 0;
@@ -88,23 +88,23 @@
 @keyframes bubbleUp3 {
   0% {
     bottom: -25%;
-    left: 32px;
+    left: 24px;
     opacity: 1;
   }
   15% {
-    left: 66px;
+    left: 23px;
   }
   30% {
-    left: 46px;
+    left: 72px;
   }
   45% {
-    left: 54px;
+    left: 21px;
   }
   60% {
-    left: 3px;
+    left: 71px;
   }
   75% {
-    left: 18px;
+    left: 55px;
   }
   100% {
     opacity: 0;
@@ -347,7 +347,23 @@ body {
   transition: all 1s ease;
 }
 
-footer .foot {
+.footer {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer .credits {
+  color: #BFC1C4;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  font-family: "Outfit", Arial, Helvetica, sans-serif;
+  vertical-align: middle;
+  font-size: medium;
+}
+.footer .credits a {
+  text-decoration: none;
   color: #4752C4;
 }
 
