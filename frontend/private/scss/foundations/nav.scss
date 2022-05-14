@@ -1,0 +1,130 @@
+@use '../src/library' as v;
+
+body {
+    background-color: v.$backgroundColor-primary;
+    // height: 1000px;
+    margin: 0;
+    padding-top: 75px;
+}
+
+.top {
+    z-index: 3;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    // height: 75px;
+}
+
+.nav {
+    width: 100%;
+    height: 75px;
+    background-color: v.$backgroundColor-primary-dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__menu {
+        padding-left: 15px;
+    }
+
+    &__title {
+        #title {
+            margin: 0;
+            @include v.header;
+        }
+    }
+
+    &__info {
+        width: fit-content;
+        padding-right: 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            font-family: "Whitney", Arial, Helvetica, sans-serif;
+            color: v.$color-primary-text;
+            font-size: large;
+        }
+
+        img {
+            margin-left: 7px;
+            border-radius: 50%;
+            height: auto;
+            width: 50px;
+        }
+
+        .logoutButton {
+            @include v.buttonBox(v.$color-danger, v.$color-danger-hover, v.$color-danger-dark);
+            margin-right: 15px;
+            visibility: hidden;
+            opacity: 0;
+            width: 125px;
+
+            a {
+                text-align: center;
+                align-self: center;
+                text-decoration: none;
+                font-family: "Outfit", Arial, Helvetica, sans-serif;
+                color: v.$color-primary-text;
+                font-size: large;
+            }
+        }
+
+        &:hover {
+            .logoutButton {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__login {
+        height: 100%;
+        padding-right: 20px;
+        display: flex;
+        width: 112.5px;
+        align-items: center;
+        justify-content: center;
+
+        &__box {
+            @include v.buttonBox(v.$color-primary, v.$color-primary-hover, v.$color-primary-dark);
+
+            #login {
+                text-align: center;
+                align-self: center;
+                text-decoration: none;
+                font-family: "Outfit", Arial, Helvetica, sans-serif;
+                color: v.$color-primary-text;
+                font-size: large;
+            }
+        }
+    }
+}
+
+.progressbar {
+    align-self: start;
+    height: 7px;
+    width: 0;
+    background-color: v.$color-primary;
+    transition: width 0.3s ease;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    &-track {
+        box-shadow: inset 0 0 5px v.$color-primary-light; 
+        border-radius: 10px;
+    }
+
+    &-thumb {
+        background: v.$color-primary; 
+        border-radius: 10px;
+        
+        &:hover {
+            background: v.$color-primary-hover; 
+        }
+    }
+}

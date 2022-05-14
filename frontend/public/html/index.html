@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../css/top.css">
+        <link rel="stylesheet" href="../css/nav.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/home.css">
         <link rel="stylesheet" href="../css/menu.css">
         <link rel="icon" sizes="32x32" href="../img/logoCodingTime-transparent.png>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,74 +13,98 @@
         <title>CTC - Accueil</title>
     </head>
     <body>
-        <div class="main">
-            <div class="nav">
-                <div class="top" >
-                    <div class="top__menu">
-                        <input id="menu__toggle" type="checkbox" onclick="clicked()"/>
-                        <label class="menu__btn" for="menu__toggle">
-                        <span></span>
-                        </label>   
-                        <ul class="menu__box">
-                            <li><a class="menu__item" href="#">About</a></li>
-                            <li><a class="menu__item" href="./request.html">Requête</a></li>
-                            <li><a class="menu__item" href="#">Tutoriel</a></li>
-                            <li><a class="menu__item" href="#">Nos soutiens </a></li>
-                            <li><a class="menu__item" href="#">Discord</a></li>
-                        </ul>
+        <div class="top">
+            <div class="nav" >
+                <div class="nav__menu">
+                    <input id="menu__toggle" type="checkbox"/>
+                    <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                    </label>   
+                    <ul class="menu__box">
+                        <li><a class="menu__item" href="#">About</a></li>
+                        <li><a class="menu__item" href="./request.html">Requête</a></li>
+                        <li><a class="menu__item" href="#">Tutoriel</a></li>
+                        <li><a class="menu__item" href="#">Nos soutiens </a></li>
+                        <li><a class="menu__item" href="#">Discord</a></li>
+                    </ul>
+                </div>
+                <div class="nav__title">
+                    <h1 id="title">CodingTime Community</h1>
+                </div>
+                <div class="nav__info" id="userAccountBox">
+                    <div class="logoutButton" onclick="location.href = 'http:\/\/127.0.0.1:5500/frontend/public/html/'">
+                        <a href="http://127.0.0.1:5500/frontend/public/html/">Déconnexion</a>
                     </div>
-                    <div class="top__title">
-                        <h1 id="title">CodingTime Community</h1>
-                    </div>
-                    <div class="top__info" id="userAccountBox">
-                        <div class="logoutButton" onclick="location.href = 'http:\/\/127.0.0.1:5500/frontend/public/html/'">
-                            <a href="http://127.0.0.1:5500/frontend/public/html/">Déconnexion</a>
-                        </div>
-                        <p id="userAccount">
-    
-                        </p>
-                        <img src="" alt="Votre avatar" id="userAccountImg">
-                    </div>
-                    <div class="top__login" id = "loginContainer">
-                        <div class="top__login__box" id="loginBox" onclick="location.href = 'https:\/\/discord.com/api/oauth2/authorize?client_id=972844456363565096&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Ffrontend%2Fpublic%2Fhtml%2F&response_type=token&scope=identify'">
-                            <a href="https://discord.com/api/oauth2/authorize?client_id=972844456363565096&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Ffrontend%2Fpublic%2Fhtml%2F&response_type=token&scope=identify" id="login">Connexion</a>
-                        </div>
+                    <p id="userAccount">
+
+                    </p>
+                    <img src="" alt="Votre avatar" id="userAccountImg">
+                </div>
+                <div class="nav__login" id = "loginContainer">
+                    <div class="nav__login__box" id="loginBox" onclick="location.href = 'https:\/\/discord.com/api/oauth2/authorize?client_id=972844456363565096&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Ffrontend%2Fpublic%2Fhtml%2F&response_type=token&scope=identify'">
+                        <a href="https://discord.com/api/oauth2/authorize?client_id=972844456363565096&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Ffrontend%2Fpublic%2Fhtml%2F&response_type=token&scope=identify" id="login">Connexion</a>
                     </div>
                 </div>
-                <div class="progressbar" id="progressBar"></div>
             </div>
-            <div class="middle">
-                <div class="about">
-                    <div class="about__title">
-                        <h1>
-                            Le forum pour <strong>développeurs</strong> & <br> <strong>apprentis développeurs</strong> !
-                        </h1>
-                    </div>
-                    <div class="about__logo">
-                        <img src="../img/logoCodingTime-transparent.png" alt="Logo">
+            <div class="progressbar" id="progressBar"></div>
+        </div>
+        <div class="middle">
+            <div class="about">
+                <div class="about__title">
+                    <h1>
+                        Le forum pour <strong>développeurs</strong> & <br> <strong>apprentis développeurs</strong> !
+                    </h1>
+                </div>
+                <div class="about__logo">
+                    <img src="../img/logoCodingTime-transparent.png" alt="Logo">
+                </div>
+            </div>
+            <div class="devs" id="devContainer">
+                <div class="devs__title">
+                    <h1 id="devs"><strong>Beaucoup</strong> développeurs & graphistes en ligne !</h1>
+                </div>
+                <div class="devs__avatars">
+                    <div class="devs__avatars__container" id="container">
+                        <div class="devs__avatars__container__avatars" style="animation: bubbleUp 15s linear;" id="trigger">
+                            <div class="devs__avatars__container__avatars__avatar">
+                                <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar0">
+                            </div>
+                            <div></div>
+                            <div></div>
+                            <div class="devs__avatars__container__avatars__avatar">
+                                <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar1">
+                            </div>
+                            <div class="devs__avatars__container__avatars__avatar">
+                                <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar2">
+                            </div>
+                            <div></div>
+                            <div></div>
+                            <div class="devs__avatars__container__avatars__avatar">
+                                <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar3">
+                            </div>
+                        </div>
+                        <div class="devs__avatars__container__avatars" style="animation: bubbleUp 15s linear;" id="untrigger">
+                            <div class="devs__avatars__container__avatars__avatar">
+                                <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar4">
+                            </div>
+                            <div></div>
+                            <div></div>
+                            <div class="devs__avatars__container__avatars__avatar">
+                                <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar5">
+                            </div>
+                            <div class="devs__avatars__container__avatars__avatar">
+                                <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar6">
+                            </div>
+                            <div></div>
+                            <div></div>
+                            <div class="devs__avatars__container__avatars__avatar">
+                                <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar7">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="devs">
-                    <div class="devs__title">
-                        <h1 id="devs"><strong>Beaucoup</strong> développeurs & graphistes en ligne !</h1>
-                    </div>
-                    <div class="devs__avatars">
-                        <div class="devs__avatars__avatar">
-                            <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar0" style="animation: bubbleUp0 10s ease"><br>
-                        </div>
-                        <div class="devs__avatars__avatar">
-                            <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar1" style="animation: bubbleUp1 10s ease; animation-delay: 1s;"><br>
-                        </div>
-                        <div class="devs__avatars__avatar">
-                            <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar2" style="animation: bubbleUp2 10s ease; animation-delay: 2.5s;"><br>
-                        </div>
-                        <div class="devs__avatars__avatar">
-                            <img src="../img/defaultAvatar.png" alt="Avatar d'un membre" id="avatar3" style="animation: bubbleUp3 10s ease; animation-delay: 4s;">
-                        </div>
-                    </div>
-                </div>
-            </div> 
-        </div class="main">
+            </div>
+        </div> 
         <div class="footer">
             <p class="credits">
                 Website by <a href="https://github.com/RenardNocturne" target="_blank">@RenardNocturne</a> & <a href="https://github.com/nat54-tech" target="_blank">@Nàt</a>

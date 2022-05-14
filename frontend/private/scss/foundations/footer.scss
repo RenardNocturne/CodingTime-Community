@@ -1,0 +1,23 @@
+@use '../src/library' as v;
+
+.footer {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .credits {
+        color: v.$color-primary-text;
+        margin: 0;
+        position: relative;
+        text-align: center;
+        font-family: "Outfit", Arial, Helvetica, sans-serif;
+        vertical-align: middle;
+        font-size: medium;
+
+        a {
+            text-decoration: none;
+            color: v.$color-primary-hover;
+        }
+    }
+}

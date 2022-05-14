@@ -8,7 +8,7 @@ window.onload = () => {
     const fragment = new URLSearchParams(window.location.hash.slice(1));
     const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
     
-    console.log(accessToken);
+    // console.log(accessToken);
     if (!accessToken) {
         return document.getElementById('userAccountBox').style.display = "none";
     } else {
@@ -28,15 +28,6 @@ window.onload = () => {
     })
     .catch(console.error);
 };
-
-let button = document.getElementById("loginBox");
-
-button.addEventListener('mousemove', (e) => {
-    x = e.offsetX;
-    y = e.offsetY;
-    button.style.setProperty('--mouse-x', x + "px");
-    button.style.setProperty('--mouse-y', y + "px");
-});
 
 const progress = document.getElementById('progressBar');
 let totalHeight = document.body.scrollHeight - window.innerHeight;

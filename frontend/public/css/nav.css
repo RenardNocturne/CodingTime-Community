@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Inconsolata:wght@500&family=Outfit:wght@300&display=swap");
+@font-face {
+  font-family: "League Gothic";
+  src: url("../fonts/LeagueGothic-1.601/static/WOFF/LeagueGothic-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/whitney-2-cufonfonts/whitneybook.otf");
+}
+body {
+  background-color: #14151B;
+  margin: 0;
+  padding-top: 75px;
+}
+
+.top {
+  z-index: 3;
+  top: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.nav {
+  width: 100%;
+  height: 75px;
+  background-color: #0E0F13;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__menu {
+  padding-left: 15px;
+}
+.nav__title #title {
+  margin: 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-family: "Outfit", Arial, Helvetica, sans-serif;
+  color: #BFC1C4;
+}
+.nav__info {
+  width: fit-content;
+  padding-right: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav__info p {
+  font-family: "Whitney", Arial, Helvetica, sans-serif;
+  color: #BFC1C4;
+  font-size: large;
+}
+.nav__info img {
+  margin-left: 7px;
+  border-radius: 50%;
+  height: auto;
+  width: 50px;
+}
+.nav__info .logoutButton {
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+  border: #CC484A 1.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+  visibility: hidden;
+  opacity: 0;
+  width: 125px;
+}
+.nav__info .logoutButton:hover {
+  background-color: #983637;
+  border-color: #983637;
+}
+.nav__info .logoutButton:active {
+  background-color: #842F30;
+  border-color: #842F30;
+}
+.nav__info .logoutButton a {
+  text-align: center;
+  align-self: center;
+  text-decoration: none;
+  font-family: "Outfit", Arial, Helvetica, sans-serif;
+  color: #BFC1C4;
+  font-size: large;
+}
+.nav__info:hover .logoutButton {
+  visibility: visible;
+  opacity: 1;
+}
+.nav__login {
+  height: 100%;
+  padding-right: 20px;
+  display: flex;
+  width: 112.5px;
+  align-items: center;
+  justify-content: center;
+}
+.nav__login__box {
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+  border: #5865F2 1.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.nav__login__box:hover {
+  background-color: #4752C4;
+  border-color: #4752C4;
+}
+.nav__login__box:active {
+  background-color: #3C45A5;
+  border-color: #3C45A5;
+}
+.nav__login__box #login {
+  text-align: center;
+  align-self: center;
+  text-decoration: none;
+  font-family: "Outfit", Arial, Helvetica, sans-serif;
+  color: #BFC1C4;
+  font-size: large;
+}
+
+.progressbar {
+  align-self: start;
+  height: 7px;
+  width: 0;
+  background-color: #5865F2;
+  transition: width 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #0D1117;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #5865F2;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4752C4;
+}
+
+/*# sourceMappingURL=nav.css.map */

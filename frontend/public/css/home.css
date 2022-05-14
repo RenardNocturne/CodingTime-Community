@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Inconsolata:wght@500&family=Outfit:wght@300&display=swap");
+@font-face {
+  font-family: "League Gothic";
+  src: url("../fonts/LeagueGothic-1.601/static/WOFF/LeagueGothic-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Whitney";
+  src: url("../fonts/whitney-2-cufonfonts/whitneybook.otf");
+}
+@keyframes bubbleUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+@keyframes zigzags0 {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-18px);
+  }
+  30% {
+    transform: translateX(16px);
+  }
+  45% {
+    transform: translateX(-22px);
+  }
+  60% {
+    transform: translateX(11px);
+  }
+  75% {
+    transform: translateX(-18px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes zigzags1 {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-23px);
+  }
+  30% {
+    transform: translateX(14px);
+  }
+  45% {
+    transform: translateX(-21px);
+  }
+  60% {
+    transform: translateX(7px);
+  }
+  75% {
+    transform: translateX(-7px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes zigzags2 {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-12px);
+  }
+  30% {
+    transform: translateX(10px);
+  }
+  45% {
+    transform: translateX(-22px);
+  }
+  60% {
+    transform: translateX(7px);
+  }
+  75% {
+    transform: translateX(-7px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes zigzags3 {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-18px);
+  }
+  30% {
+    transform: translateX(17px);
+  }
+  45% {
+    transform: translateX(-12px);
+  }
+  60% {
+    transform: translateX(12px);
+  }
+  75% {
+    transform: translateX(-25px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes zigzags4 {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-3px);
+  }
+  30% {
+    transform: translateX(9px);
+  }
+  45% {
+    transform: translateX(-15px);
+  }
+  60% {
+    transform: translateX(6px);
+  }
+  75% {
+    transform: translateX(-16px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes zigzags5 {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-19px);
+  }
+  30% {
+    transform: translateX(22px);
+  }
+  45% {
+    transform: translateX(-8px);
+  }
+  60% {
+    transform: translateX(14px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes zigzags6 {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-22px);
+  }
+  30% {
+    transform: translateX(22px);
+  }
+  45% {
+    transform: translateX(-16px);
+  }
+  60% {
+    transform: translateX(24px);
+  }
+  75% {
+    transform: translateX(-9px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes zigzags7 {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-6px);
+  }
+  30% {
+    transform: translateX(7px);
+  }
+  45% {
+    transform: translateX(-18px);
+  }
+  60% {
+    transform: translateX(21px);
+  }
+  75% {
+    transform: translateX(-18px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.middle {
+  width: 100%;
+  height: calc(100% - 75px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.middle .about {
+  background-image: radial-gradient(circle at top center, #14151B, #0E0F13);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50vh;
+  width: 80%;
+  padding: 0 10% 0 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.middle .about__title {
+  width: fit-content;
+}
+.middle .about__title h1 {
+  text-align: center;
+  line-height: 60px;
+  margin: 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-family: "Outfit", Arial, Helvetica, sans-serif;
+  color: #BFC1C4;
+}
+.middle .about__title h1 strong {
+  color: #5865F2;
+}
+.middle .about__logo img {
+  transform: rotate(180deg);
+  width: 100%;
+}
+.middle .devs {
+  box-shadow: 0 -25px 75px -10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+  height: 80vh;
+  width: 75%;
+  padding: 0 12.5% 0 12.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.middle .devs::after {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  mask: url("../img/wave.svg");
+  -webkit-mask: url("../img/wave.svg");
+  top: 0;
+  left: 0;
+  background-color: #0E0F13;
+  width: 100%;
+  height: 100%;
+}
+.middle .devs__title {
+  width: 35%;
+}
+.middle .devs__title h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-family: "Outfit", Arial, Helvetica, sans-serif;
+  color: #BFC1C4;
+}
+.middle .devs__title h1 strong {
+  color: #5865F2;
+}
+.middle .devs__avatars {
+  position: relative;
+  height: 100%;
+  width: 25%;
+}
+.middle .devs__avatars__container {
+  display: flex;
+  height: 200%;
+  align-items: center;
+  flex-direction: column;
+}
+.middle .devs__avatars__container--reversed {
+  flex-direction: column-reverse;
+}
+.middle .devs__avatars__container__avatars {
+  position: relative;
+  display: grid;
+  height: 100%;
+  grid-template-areas: "a ." ". b" "c ." ". d";
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.middle .devs__avatars__container__avatars__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.middle .devs__avatars__container__avatars__avatar img {
+  border-radius: 50%;
+  transition: all 1s ease;
+}
+.middle .devs__avatars__container__avatars__avatar #avatar0 {
+  width: 38%;
+  animation: zigzags0 15s infinite linear;
+  animation-delay: -5s;
+}
+.middle .devs__avatars__container__avatars__avatar #avatar1 {
+  width: 63%;
+  animation: zigzags1 15s infinite linear;
+  animation-delay: -3s;
+}
+.middle .devs__avatars__container__avatars__avatar #avatar2 {
+  width: 97%;
+  animation: zigzags2 15s infinite linear;
+  animation-delay: -2s;
+}
+.middle .devs__avatars__container__avatars__avatar #avatar3 {
+  width: 46%;
+  animation: zigzags3 15s infinite linear;
+  animation-delay: -5s;
+}
+.middle .devs__avatars__container__avatars__avatar #avatar4 {
+  width: 60%;
+  animation: zigzags4 15s infinite linear;
+  animation-delay: -12s;
+}
+.middle .devs__avatars__container__avatars__avatar #avatar5 {
+  width: 73%;
+  animation: zigzags5 15s infinite linear;
+  animation-delay: -5s;
+}
+.middle .devs__avatars__container__avatars__avatar #avatar6 {
+  width: 83%;
+  animation: zigzags6 15s infinite linear;
+  animation-delay: -3s;
+}
+.middle .devs__avatars__container__avatars__avatar #avatar7 {
+  width: 53%;
+  animation: zigzags7 15s infinite linear;
+  animation-delay: -8s;
+}
+
+/*# sourceMappingURL=home.css.map */

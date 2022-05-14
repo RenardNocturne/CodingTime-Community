@@ -1,0 +1,175 @@
+@use 'src/library' as v;
+
+@keyframes bubbleUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@for $n from 0 to 8 {
+    @keyframes zigzags#{$n} {
+        0% {
+            transform: translateX(0);
+        }
+        15% {
+            transform: translateX(- v.randomNum(3, 25) + px);
+        }
+        30% {
+            transform: translateX(v.randomNum(3, 25) + px);
+        }
+        45% {
+            transform: translateX(- v.randomNum(3, 25) + px);
+        }
+        60% {
+            transform: translateX(v.randomNum(3, 25) + px);
+        }
+        75% {
+            transform: translateX(- v.randomNum(3, 25) + px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+}
+
+.middle {
+    // margin-top: 75px;
+    width: 100%;
+    height: calc(100% - 75px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .about {
+        background-image: radial-gradient(circle at top center, v.$backgroundColor-primary, v.$backgroundColor-primary-dark);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 50vh;
+        width: 80%;
+        padding: 0 10% 0 10%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        &__title {
+            width: fit-content;
+
+            h1 {
+                text-align: center;
+                line-height: 60px;
+                margin: 0;
+                @include v.header;
+
+                strong {
+                    color: v.$color-primary
+                }
+            }
+        }        
+        &__logo {
+
+
+            img {
+                transform: rotate(180deg);
+                width: 100%;
+            }
+        }
+        
+    }
+
+    .devs {
+        box-shadow: 0 -25px 75px -10px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        position: relative;
+        height: 80vh;
+        width: 75%;
+        padding: 0 12.5% 0 12.5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &::after {
+            content: "";
+            z-index: -2;
+            position: absolute;
+            mask:  url("../img/wave.svg");
+            -webkit-mask: url("../img/wave.svg");
+            top: 0;
+            left: 0;
+            background-color: v.$backgroundColor-primary-dark;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__title {
+            width: 35%;
+            h1 {
+                text-align: center;
+                @include v.header();
+
+                strong {
+                    color: v.$color-primary;
+                }
+            }
+        }
+
+        &__avatars {
+            position: relative;
+            height: 100%;
+            width: 25%;
+                    
+            &__container {
+                // transform: translateY(100%);
+                display: flex;
+                height: 200%;
+                align-items: center;
+                flex-direction: column;
+
+                &--reversed {
+                    flex-direction: column-reverse;
+                }
+
+                &__avatars {
+                    position: relative;
+                    display: grid;
+                    height: 100%;
+                    grid-template-areas: 
+                    "a ."
+                    ". b"
+                    "c ."
+                    ". d";
+                    grid-template-columns: 2fr 2fr;
+                    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+                    &__avatar {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: fit-content;
+                        position: relative;
+                        width: 100%;
+                        height: 100%;                            
+
+                        img {
+                            // transform: translateX(-50%);
+                            border-radius: 50%;
+                            transition: all 1s ease;
+                        }
+
+                        @for $n from 0 to 8 {
+                            #avatar#{$n} {
+                                width: percentage(v.randomNum(35, 100)/100);
+                                animation: zigzags#{$n} 15s infinite linear;
+                                animation-delay: - random(15)+ s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
