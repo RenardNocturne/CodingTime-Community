@@ -55,6 +55,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        box-shadow: -25px 0 75px -10px rgba(0, 0, 0, 0.5);        
         
         &__title {
             width: fit-content;
@@ -82,7 +83,7 @@
     }
 
     .devs {
-        box-shadow: 0 -25px 75px -10px rgba(0, 0, 0, 0.5);
+
         overflow: hidden;
         position: relative;
         height: 80vh;
@@ -112,7 +113,7 @@
                 @include v.header();
 
                 strong {
-                    color: v.$color-primary;
+                    color: #7B0CE9;
                 }
             }
         }
@@ -155,7 +156,7 @@
                         height: 100%;                            
 
                         img {
-                            // transform: translateX(-50%);
+                            //transform: translateX(-50%);
                             border-radius: 50%;
                             transition: all 1s ease;
                         }
@@ -169,6 +170,110 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+     .utils {
+        width: 100%;
+        padding: 0 15% 0 15% 0;
+        height: 60vh;
+        background-color: v.$backgroundColor-primary;
+        display: flex;
+        position: relative;
+        justify-content: space-around;
+        align-items: flex-start;
+
+        &::after {
+            content: "";
+            z-index: 1;
+            position: absolute;
+            background-image: url("../img/transition.svg");
+            top: -25%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        &__cards {
+            width: 30%;
+            z-index: 2;
+            height: 80%;
+            border-radius: 20px;
+            box-shadow: 0 -25px 75px -10px rgba(0, 0, 0, 0.5);
+            background-color: v.$backgroundColor-primary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: all .35s ease;
+
+            &__content {
+                width: 85%;
+                height: 85%;
+                position: relative;
+                
+                &__title {
+                    margin-top: 15px;
+                    width: 100%;
+                    height: 45px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+    
+                    h1 {
+                        margin-left: 25px;
+                        @include v.header($fontSize: 30px);
+                        text-align: center;
+                    }
+                    
+                    img {
+                        border-radius: 50%;
+                        width: 12.5%;
+                    }
+
+                }
+                
+                &__text {
+                    margin-top: 15%;
+
+                    p {
+                        text-align: center;
+                        @include v.text($fontFamily: "Outfit");
+                    }
+                    
+                    strong {
+                        color: v.$color-secondary;
+                    }
+                }
+
+                &__button {
+                    width: 100%;
+                    height: 75px;
+                    position: absolute;
+                    bottom: 0px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    &__inner {
+                        @include v.buttonBox(v.$color-success, v.$color-success-hover, v.$color-success-active);
+                        width: 150px;
+
+                        a {
+                            text-align: center;
+                            vertical-align: middle;
+                            text-decoration: none;
+                            @include v.text($fontFamily: "Outfit")
+                        }
+                    }
+                }
+            
+            }
+            
+            &:hover {
+                transform: translateY(-35px);
+                box-shadow: 0 -25px 100px -10px rgba(0, 0, 0, 0.5);
             }
         }
     }

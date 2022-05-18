@@ -107,7 +107,7 @@ body {
     align-self: start;
     height: 7px;
     width: 0;
-    background-color: v.$color-primary;
+    background: linear-gradient(90deg, v.$color-primary, v.$color-secondary);
     transition: width 0.3s ease;
 }
 

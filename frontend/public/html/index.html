@@ -13,6 +13,9 @@
         <title>CTC - Accueil</title>
     </head>
     <body>
+
+        <!-- TOP -->
+
         <div class="top">
             <div class="nav" >
                 <div class="nav__menu">
@@ -22,10 +25,10 @@
                     </label>   
                     <ul class="menu__box">
                         <li><a class="menu__item" href="#">About</a></li>
-                        <li><a class="menu__item" href="./request.html">Requête</a></li>
+                        <li><a class="menu__item" href="./request.html">Requêtes & Offres</a></li>
                         <li><a class="menu__item" href="#">Tutoriel</a></li>
                         <li><a class="menu__item" href="#">Nos soutiens </a></li>
-                        <li><a class="menu__item" href="#">Discord</a></li>
+                        <li><a class="menu__item" href="https://discord.gg/YDa9BbNEtS">Discord</a></li>
                     </ul>
                 </div>
                 <div class="nav__title">
@@ -48,6 +51,9 @@
             </div>
             <div class="progressbar" id="progressBar"></div>
         </div>
+
+        <!-- MIDDLE -->
+
         <div class="middle">
             <div class="about">
                 <div class="about__title">
@@ -104,13 +110,143 @@
                     </div>
                 </div>
             </div>
+            <div class="utils">
+                <div class="utils__cards">
+                    <div class="utils__cards__content">
+                        <div class="utils__cards__content__title">
+                            <img src="../img/createOffer.jpg" alt="Image du titre">
+                            <h1>Créer une offre !</h1>
+                        </div>
+                        <div class="utils__cards__content__text">
+                            <p>
+                                Vous êtes développeur et vous souhaitez <strong>proposer vos services</strong> ? <br><br>Créez votre propre offre et proposez vos services aux membres du serveur !
+                            </p>
+                        </div>
+                        <div class="utils__cards__content__button">
+                            <div class="utils__cards__content__button__inner">
+                                <a href="./request.html">Par ici !</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="utils__cards">
+                    <div class="utils__cards__content">
+                        <div class="utils__cards__content__title">
+                            <img src="../img/tutoriel.jpg" alt="Image du titre">
+                            <h1>Dernière Publication !</h1>
+                        </div>
+                        <div class="utils__cards__content__text">
+                            <p>
+                                Un certains nombre de caractères maximums autorisés !
+                            </p>
+                        </div>
+                        <div class="utils__cards__content__button">
+                            <div class="utils__cards__content__button__inner">
+                                <a href="#">Par là !</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="utils__cards">
+                    <div class="utils__cards__content">
+                        <div class="utils__cards__content__title">
+                            <img src="../img/requete.png" alt="Image du titre">
+                            <h1>Créer une requête !</h1>
+                        </div>
+                        <div class="utils__cards__content__text">
+                            <p>
+                                Vous êtes à la <strong>recherche de talentueux développeurs</strong> ? Ne vous en faites pas ! <br><br> Publiez votre requête et attendez que le développeur morde à l'hameçon ! 
+                            </p>
+                        </div>
+                        <div class="utils__cards__content__button">
+                            <div class="utils__cards__content__button__inner">
+                                <a href="./request.html">Allez viens !</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div> 
+
+        <!-- FOOTER -->
+
         <div class="footer">
+            <div class="waves">
+                <svg width="100%" height="200px" fill="none" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#AE3ADA" />
+                    <stop offset="100%" stop-color="#5865F2" />
+                    </linearGradient>
+                    <path 
+                    fill="url(#grad1)" 
+                    d="
+                        M0 67
+                        C 273,183
+                        822,-40
+                        1920.00,106 
+                        
+                        V 359 
+                        H 0 
+                        V 67
+                        Z">
+                    <animate 
+                        repeatCount="indefinite" 
+                        fill="url(#grad1)" 
+                        attributeName="d" 
+                        dur="15s"
+                        attributeType="XML"
+                        values="
+                        M0 77 
+                        C 473,283
+                            822,-40
+                            1920,116 
+                        
+                        V 359 
+                        H 0 
+                        V 67 
+                        Z; 
+
+                        M0 77 
+                        C 473,-40
+                            1222,283
+                            1920,136 
+                        
+                        V 359 
+                        H 0 
+                        V 67 
+                        Z; 
+
+                        M0 77 
+                        C 973,260
+                            1722,-53
+                            1920,120 
+                        
+                        V 359 
+                        H 0 
+                        V 67 
+                        Z; 
+
+                        M0 77 
+                        C 473,283
+                            822,-40
+                            1920,116 
+                        
+                        V 359 
+                        H 0 
+                        V 67 
+                        Z
+                        ">
+                    </animate>
+                    </path>
+                </svg>
+            </div>
             <p class="credits">
                 Website by <a href="https://github.com/RenardNocturne" target="_blank">@RenardNocturne</a> & <a href="https://github.com/nat54-tech" target="_blank">@Nàt</a>
             </p>
         </div>
         <script src="../js/script.js"></script>
+        <script src="../js/progressBar.js"></script>
         <script src="../js/avatars.js"></script>
     </body>
 </html>

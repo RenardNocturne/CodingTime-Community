@@ -137,7 +137,7 @@ body {
   align-self: start;
   height: 7px;
   width: 0;
-  background-color: #5865F2;
+  background: linear-gradient(90deg, #5865F2, #AE3ADA);
   transition: width 0.3s ease;
 }
 

@@ -2,13 +2,22 @@ $color-primary: #5865F2 !default;
 $color-primary-hover: #4752C4 !default;
 $color-primary-dark: #3C45A5 !default;
 
+$color-secondary: #AE3ADA !default;
+$color-secondary-hover: #9433b8 !default;
+$color-secondary-dark: #55186b !default;
+
 $color-danger: #CC484A !default;
 $color-danger-hover: #983637 !default;
 $color-danger-dark: #842F30 !default;
 
+$color-success: #27AE60;
+$color-success-hover: #238a4e;
+$color-success-active: #166336;
+
 $color-primary-light: #0D1117 !default;
 $backgroundColor-primary: #14151B !default;
 $backgroundColor-primary-dark: #0E0F13 !default;
+$backgroundColor-secondary: #4D0F7B !default;
 
 $color-primary-text: #BFC1C4 !default;
 $color-primary-text-dark: #94979C !default;
@@ -36,8 +45,8 @@ $color-primary-text-light: #E3DEDE !default;
   }
 
 //create mixin for headers
-@mixin header {
-    font-size: 2.5rem;
+@mixin header ($fontSize: 2.5rem) {
+    font-size: $fontSize;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     font-family: "Outfit", Arial, Helvetica, sans-serif;
@@ -66,4 +75,11 @@ $color-primary-text-light: #E3DEDE !default;
         background-color: $colorClick;
         border-color: $colorClick;
     }
+}
+
+@mixin text ($fontSize: 24px, $fontFamily: "Whitney", $color: $color-primary-text) {
+    //mixin text
+    font-size: $fontSize;
+    font-family: $fontFamily, Arial, Helvetica, sans-serif;
+    color: $color;
 }
